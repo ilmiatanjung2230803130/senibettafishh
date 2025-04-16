@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Pembelian - Seni Betta Fish</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            line-height: 1.6;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+        }
+
+        header {
+            background-color: #0400ff;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ff6347;
+        }
+
+        #riwayat {
+            background-color: #fff;
+            margin: 30px auto;
+            padding: 20px;
+            max-width: 800px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #riwayat h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .purchase-list {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .purchase-item {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .purchase-item h4 {
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: #333;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Seni Betta Fish</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produk.html">Product</a></li>
+                <li><a href="tentang.html">About</a></li>
+                <li><a href="kontak.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="riwayat">
+            <h2>Riwayat Pembelian Anda</h2>
+            <div class="purchase-list" id="purchase-list">
+                <!-- Riwayat pembelian akan ditampilkan di sini -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>COPYRIGHT&copy;-2024 Seni Betta Fish</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const purchaseList = document.getElementById('purchase-list');
+            const history = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
+
+            if (history.length === 0) {
+                purchaseList.innerHTML = '<p>Belum ada riwayat pembelian.</p>';
+            } else {
+                history.forEach(function (item) {
+                    const purchaseItem = document.createElement('div');
+                    purchaseItem.classList.add('purchase-item');
+                    purchaseItem.innerHTML = `
+                        <h4>${item.name}</h4>
+                        <p>Jumlah: ${item.quantity}</p>
+                        <p>Harga: Rp. ${(item.price * item.quantity).toLocaleString()}</p>
+                    `;
+                    purchaseList.appendChild(purchaseItem);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

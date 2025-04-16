@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ikan - Seni Betta Fish</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Gaya umum */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            line-height: 1.6;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+        }
+
+        header {
+            background-color: #0400ff;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        nav ul li a:hover {
+            color: #ff6347;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        /* Banner Kategori Action */
+        .banner-action {
+            position: relative;
+            background: url('images/banner_action.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .banner-action h1 {
+            font-size: 3rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        /* Grid Produk */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 3px solid #ff6347;
+        }
+
+        .product-card h3 {
+            margin: 15px 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .product-card p {
+            font-size: 1.2rem;
+            color: #777;
+        }
+
+        .harga-asli {
+            text-decoration: line-through;
+            color: #777;
+        }
+
+        /* Label diskon di kiri atas */
+        .label-diskon {
+            background-color: #ff6347;
+            color: white;
+            padding: 5px 10px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            border-radius: 5px;
+        }
+
+        /* Label persentase diskon di kanan atas */
+        .label-diskon-persen {
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .add-to-cart {
+            background-color: #ff6347;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart[disabled] {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+
+        .tag-genre {
+            background-color: #ff6347;
+            color: white;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Tombol Genre Lain */
+        .genre-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .genre-button {
+            background-color: hsl(240, 100%, 64%);
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .genre-button:hover {
+            background-color: #e55337;
+        }
+        
+
+        /* Responsive untuk mobile */
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-card img {
+                height: 180px;
+            }
+
+            .product-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .product-card p {
+                font-size: 1rem;
+            }
+
+            .add-to-cart {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Seni Betta Fish</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produk.html">Product</a></li>
+                <li><a href="tentang.html">About</a></li>
+                <li><a href="kontak.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+ <!-- Banner Kategori Ikan -->
+ <section class="banner-action">
+    <h1>Kategori Ikan</h1>
+</section>
+
+<!-- Daftar Produk Ikan -->
+<section id="produk-action">
+    <div class="product-grid">
+          <!-- Produk Promo -->
+          <div class="product-card" data-price="10000" data-discount="10000" data-stock="10">
+            <span class="label-diskon">Diskon 60%</span>
+            <img src="images/F3.jpg" alt="Cupang Super Red">
+            <h3>Cupang Super Red</h3>
+            <p><span class="harga-asli">Rp. 25,000</span> Rp. 10,000</p>
+            <p class="stok">Stok: 10</p>
+            <button class="add-to-cart">Tambah Ke Keranjang</button>
+        </div>
+          <!-- Produk Promo -->
+          <div class="product-card" data-price="10000" data-discount="10000" data-stock="10">
+            <span class="label-diskon">Diskon 60%</span>
+            <img src="images/F6.jpg" alt="Cupang Barongsai">
+            <h3>Cupang Barongsai</h3>
+            <p><span class="harga-asli">Rp. 25,000</span> Rp. 10,000</p>
+            <p class="stok">Stok: 10</p>
+            <button class="add-to-cart">Tambah Ke Keranjang</button>
+        </div>
+          <!-- Produk Promo -->
+          <div class="product-card" data-price="10000" data-discount="10000" data-stock="10">
+            <span class="label-diskon">Diskon 60%</span>
+            <img src="images/F8.jpg" alt="Cupang Blue White">
+            <h3>Cupang Blue White</h3>
+            <p><span class="harga-asli">Rp. 25,000</span> Rp. 10,000</p>
+            <p class="stok">Stok: 10</p>
+            <button class="add-to-cart">Tambah Ke Keranjang</button>
+        </div>
+    </div>
+</section>
+
+<!-- Tombol Genre Lain -->
+<section class="genre-buttons">
+    <a href="ikan cupang.html" class="genre-button">Ikan Hias Cupang</a>
+    <a href="ikan perawatan.html" class="genre-button">Perawatan dan Obat ikan</a>
+</section>
+
+<footer>
+    <p>COPYRIGHT&copy;-2024 Seni Betta Fish</p>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+        // Fungsi untuk memperbarui keranjang di localStorage
+        function addToCart(productId, name, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            const existingProduct = cart.find(item => item.id === productId);
+            
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+            } else {
+                cart.push({ id: productId, name: name, price: price, quantity: 1 });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${name} berhasil ditambahkan ke keranjang!`);
+        }
+
+        addToCartButtons.forEach(function (button) {
+            const productCard = button.closest('.product-card');
+            const productId = parseInt(productCard.getAttribute('data-id'));
+            const productName = productCard.getAttribute('data-name');
+            const productPrice = parseInt(productCard.getAttribute('data-discount')) || parseInt(productCard.getAttribute('data-price'));
+            const stock = parseInt(productCard.getAttribute('data-stock'));
+
+            if (stock === 0) {
+                button.disabled = true;
+                button.textContent = 'Sold Out';
+            }
+
+            button.addEventListener('click', function () {
+                addToCart(productId, productName, productPrice);
+            });
+        });
+
+        // Menghitung persentase diskon dan menampilkannya di label diskon persentase
+        function updateDiscountPercentage() {
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(function (card) {
+                const price = parseInt(card.getAttribute('data-price'));
+                const discountPrice = parseInt(card.getAttribute('data-discount'));
+
+                if (discountPrice && price) {
+                    const discountPercentage = Math.round(((price - discountPrice) / price) * 100);
+                    const discountLabel = card.querySelector('.label-diskon-persen');
+                    if (discountLabel) {
+                        discountLabel.textContent = `-${discountPercentage}%`;
+                    }
+                }
+            });
+        }
+
+        updateDiscountPercentage();
+    });
+</script>
+</body>
+</html>

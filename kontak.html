@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Seni Betta Fish</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Styling untuk halaman kontak */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            background: linear-gradient(to bottom right, #a1c4fd, #c2e9fb); /* Warna yang lebih menyenangkan */
+        }
+
+        header {
+            background-color: #0400ff;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ff6347;
+        }
+
+        #kontak {
+            background-color: white;
+            margin: 30px auto;
+            padding: 30px;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #kontak h2 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #000000;
+            text-align: center;
+        }
+
+        #kontak p {
+            font-size: 1.2rem;
+            color: #000000;
+            margin-bottom: 20px;
+            text-align: left; /* Membuat paragraf rata kiri */
+        }
+
+        .contact-info {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ff0037; /* Warna judul kontak */
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .social-media {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start; /* Rata ke kiri */
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-media li {
+            display: inline-block;
+        }
+
+        .btn-social {
+            display: inline-block;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-social.facebook {
+            background-color: #3b5998;
+        }
+
+        .btn-social.facebook:hover {
+            background-color: #334d84;
+        }
+
+        .btn-social.whatsapp {
+            background-color: #25D366;
+        }
+
+        .btn-social.whatsapp:hover {
+            background-color: #1EBE57;
+        }
+
+        .btn-social.instagram {
+            background-color: #4f003d;
+        }
+
+        .btn-social.instagram:hover {
+            background-color: #C72E62;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: #333;
+            color: white;
+            margin-top: 30px;
+        }
+
+        /* Media queries untuk tampilan mobile */
+        @media (max-width: 768px) {
+            #kontak {
+                padding: 20px;
+            }
+
+            .contact-info {
+                text-align: left;
+            }
+
+            .social-media {
+                flex-direction: column;
+                align-items: flex-start; /* Rata ke kiri */
+            }
+
+            .btn-social {
+                width: 100%;
+                text-align: left;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Seni Betta Fish</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produk.html">Product</a></li>
+                <li><a href="tentang.html">About</a></li>
+                <li><a href="kontak.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="kontak">
+            <h2>Hubungi Kontak Kami </h2>
+            <p>Kunjungi lokasi agensi kami atau hubungi kami hari ini :</p>
+            <div class="contact-info">
+                <h3>Alamat</h3>
+                <p>Jalan.Kimarogan Rt.039 Rw.003 Kecamatan.Kertapati Kelurahan.KemasRindo Kota.Palembang Sumatera Selatan 30258</p>
+
+                <h3>Telepon</h3>
+                <p>+62 851 3405 0476</p>
+
+                <h3>Email</h3>
+                <p>salmanalfaris021005@.gmail.com</p>
+
+                <h3>Jam Operasional</h3>
+                <p>Senin - Jumat: 07:00 - 23:00</p>
+                <p>Sabtu: 07:00 - 20:00</p>
+                <p>Minggu: Tutup / Libur</p>
+
+                <h3>Media Sosial</h3>
+                <ul class="social-media">
+                    <li><a href="https://wa.me/6285134050476" target="_blank" class="btn-social whatsapp">WhatsApp</a></li>
+                    <li><a href="https://www.instagram.com/senibeta_fish?igsh=MXBoZnQ1d2IxbTlqaw==" target="_blank" class="btn-social instagram">Instagram</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>COPYRIGHT&copy;-2024 Seni Betta Fish</p>
+    </footer>
+
+    <script src="/js/scripts.js"></script>
+</body>
+</html>

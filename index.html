@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senibettafish</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Reset dan gaya dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            line-height: 1.6;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background-color: #0400ff;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #47b2ff;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        /* Banner */
+        .banner {
+            position: relative;
+            background: url('images/F13.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner-content {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .banner-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .banner-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .banner-button {
+            padding: 10px 25px;
+            background-color: #ff6347;
+            color: white;
+            text-transform: uppercase;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .banner-button:hover {
+            background-color: #e55337;
+        }
+
+        /* Kategori Buku */
+        .kategori {
+            padding: 50px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .kategori h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .kategori-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .kategori-item {
+            background: #ffa0a0;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .kategori-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .kategori-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .kategori-item h3 {
+            margin: 15px 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        /* Testimonial Section */
+        .testimonials {
+            background: linear-gradient(45deg, #ff9a9e, #fecfef);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .testimonial-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .testimonial-item {
+            background: white;
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+            color: #555;
+        }
+
+        .testimonial-item h4 {
+            margin-top: 15px;
+            color: #007bff;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            .kategori-list,
+            .testimonial-list {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .kategori-item img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Seni Betta Fish</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produk.html">Product</a></li>
+                <li><a href="tentang.html">About</a></li>
+                <li><a href="kontak.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner" style="background-image: url('images/F13.jpg'); background-size: cover; background-position: center;">
+        <div class="banner-content">
+            <h2>Selamat Datang di Senibettafish Toko Online</h2>
+            <p>Temukan ikan Hias Cupang Disini.</p>
+            <a href="produk.html" class="banner-button">Lihat Produk</a>
+        </div>
+    </section>
+
+    <!-- Kategori ikan -->
+    <section class="kategori">
+        <h2>PRODUK KATEGORI</h2>
+        <div class="kategori-list">
+            <div class="kategori-item">
+                <a href="ikan cupang.html">
+                    <img src="images/kategori cupang.jpg" alt="Ikan Hias Cupang">
+                    <h3>Ikan Hias Cupang</h3>
+                </a>
+            </div>
+            <div class="kategori-item">
+                <a href="ikan perawatan.html">
+                    <img src="images/kategori.jpg" alt="Perawatan dan Obar Ikan">
+                    <h3>Perawatan dan Obat ikan</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>COPYRIGHT&copy;-2024 Seni Betta Fish. Semua Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <script>
+        // Tambahkan JavaScript di sini jika ada interaksi tambahan yang diperlukan untuk beranda.
+    </script>
+</body>
+</html>
